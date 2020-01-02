@@ -13,6 +13,9 @@ import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http';
 import { PortalModule } from './portal/portal.module';
 import { PlayerModule } from "./player/player.module";
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 
 @NgModule({
@@ -25,7 +28,9 @@ import { PlayerModule } from "./player/player.module";
     IonicStorageModule.forRoot(),
     HttpClientModule,
     PortalModule,
-    PlayerModule
+    PlayerModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [
     StatusBar,
