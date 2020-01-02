@@ -13,9 +13,10 @@ import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http';
 import { PortalModule } from './portal/portal.module';
 import { PlayerModule } from "./player/player.module";
-import { AngularFireModule } from 'angularfire2';
-import { environment } from '../environments/environment';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
+import firebaseCofig from './firebase';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
 
 
 @NgModule({
@@ -29,8 +30,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     HttpClientModule,
     PortalModule,
     PlayerModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFireModule.initializeApp(firebaseCofig),
+    AngularFireAuthModule
   ],
   providers: [
     StatusBar,
