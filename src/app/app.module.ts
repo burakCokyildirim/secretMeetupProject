@@ -13,6 +13,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http';
 import { PortalModule } from './portal/portal.module';
 import { PlayerModule } from "./player/player.module";
+import { GlobalService } from './global.service';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { PlayerModule } from "./player/player.module";
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    SQLite
+    SQLite,
+    GlobalService
   ],
   bootstrap: [AppComponent]
 })

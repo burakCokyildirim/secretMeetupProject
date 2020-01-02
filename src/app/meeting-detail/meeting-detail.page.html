@@ -1,9 +1,12 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>MeetingDetail</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{meetingDetail.title}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+{{meetingDetail.id}}
 </ion-content>
