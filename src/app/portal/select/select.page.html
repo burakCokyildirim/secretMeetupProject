@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Select
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let portal of portals">
+      <h2>{{ portal.name }}</h2>
+    </ion-item>
+  </ion-list>
+  <ion-button (click)="getPortals()">Refresh Portals</ion-button>
+  <ion-button routerLink="/">Go Home</ion-button>
+  <ion-button routerLink="/search">Go Search</ion-button>
+</ion-content>

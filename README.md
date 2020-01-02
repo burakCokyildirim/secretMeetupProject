@@ -1,1 +1,1 @@
-# secretMeetupProject
+# ionic-sqlite-feature-module
