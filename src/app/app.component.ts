@@ -32,6 +32,12 @@ export class AppComponent {
     }
   ];
 
+  public authUser = {
+    isLoggedIn: false,
+    email: null,
+    fullname: null
+  };
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,

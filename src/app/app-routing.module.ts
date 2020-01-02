@@ -22,7 +22,8 @@ const routes: Routes = [
   {
     path: 'player',
     loadChildren: './player/player.module#PlayerModule'
-  }
+  },  { path: 'meeting-detail', loadChildren: './meeting-detail/meeting-detail.module#MeetingDetailPageModule' }
+
 
 ];
 
