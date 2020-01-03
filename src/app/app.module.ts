@@ -14,6 +14,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { PortalModule } from './portal/portal.module';
 import { PlayerModule } from "./player/player.module";
 import { GlobalService } from './global.service';
+import firebaseCofig from './firebase';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
 
 
 @NgModule({
@@ -26,7 +30,9 @@ import { GlobalService } from './global.service';
     IonicStorageModule.forRoot(),
     HttpClientModule,
     PortalModule,
-    PlayerModule
+    PlayerModule,
+    AngularFireModule.initializeApp(firebaseCofig),
+    AngularFireAuthModule
   ],
   providers: [
     StatusBar,
@@ -37,4 +43,4 @@ import { GlobalService } from './global.service';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
