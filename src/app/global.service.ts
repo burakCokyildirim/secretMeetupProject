@@ -14,6 +14,12 @@ export class GlobalService {
     }
   ];
 
+  public authUser = {
+    isLoggedIn: false,
+    email: null,
+    fullname: null
+  };
+
   constructor() { }
 
   getMeeting(id) {

@@ -12,13 +12,11 @@ import { NavigationExtras } from '@angular/router';
 export class HomePage {
 
   portals = [];
-  meetings = [];
 
   constructor(
     private sqlService: SQLService,
     private globalService: GlobalService,
     private navCtrl: NavController) {
-    this.meetings = this.globalService.meetings;
 
     /*this.sqlService.getDbState().subscribe(ready => {
       if (ready) {

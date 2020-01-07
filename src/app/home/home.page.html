@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let meeting of meetings" (click)="goMeetingDetail(meeting.id);">
+  <ion-card *ngFor="let meeting of globalService.meetings" (click)="goMeetingDetail(meeting.id);">
     <ion-card-header>
       <ion-card-title>{{meeting.title}}</ion-card-title>
       <ion-card-subtitle>by {{meeting.createdBy}}</ion-card-subtitle>

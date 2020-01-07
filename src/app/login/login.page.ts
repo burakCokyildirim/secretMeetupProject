@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth, app } from 'firebase/app';
 import { NavController } from '@ionic/angular';
+import { GlobalService } from '../global.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,10 @@ export class LoginPage implements OnInit {
   username: string = ""
   password: string = ""
 
-  constructor(public afAuth: AngularFireAuth, public navcontroller: NavController) { }
+  constructor(
+    public afAuth: AngularFireAuth, 
+    public navcontroller: NavController,
+    private globalService: GlobalService) { }
 
   ngOnInit() {
   }
@@ -26,7 +30,7 @@ export class LoginPage implements OnInit {
       if (res.user.uid != undefined){
         alert("Login başarılı")
         this.navcontroller.navigateRoot("home")
-        
+        this.globalService.authUser.isLoggedIn = true
       }
     } catch (error) {
       alert(error)

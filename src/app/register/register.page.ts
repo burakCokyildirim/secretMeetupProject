@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
 import { NavController, AlertController } from '@ionic/angular';
 import { Alert } from 'selenium-webdriver';
+import { GlobalService } from '../global.service';
 
 
 @Component({
@@ -17,7 +18,10 @@ export class RegisterPage implements OnInit {
   cpassword: string = ""
 
 
-  constructor(public afAuth: AngularFireAuth, public navcontroller: NavController) { }
+  constructor(
+    public afAuth: AngularFireAuth,
+    public navcontroller: NavController,
+    private globalService: GlobalService) { }
 
   ngOnInit() {
   }
@@ -28,6 +32,7 @@ export class RegisterPage implements OnInit {
     if (password !== cpassword) {
       alert("Passords don't match.")
       console.error("Passords don't match.");
+      return;
     }
 
     try {
@@ -36,6 +41,7 @@ export class RegisterPage implements OnInit {
       if (res.user.uid != undefined){
         alert("Login başarılı")
         this.navcontroller.navigateRoot("home")
+        this.globalService.authUser.isLoggedIn = true
       }
     } catch (error) {
       alert(error)
